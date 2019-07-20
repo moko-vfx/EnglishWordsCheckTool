@@ -27,11 +27,15 @@ namespace MT_WordCheck
 		bool loaded = false;
 		// 英単語データ数
 		int cnt;
+		// 英単語データから省略しない数
+		int notOmitCnt;
 		// ランダムID
 		int[] ary;
 		int[] rdm;
 		// 出題No
 		int now = 0;
+		// 省略せず出題したNo
+		int notOmitNow = 0;
 		// 英語チェックモードかどうか
 		bool en = true;
 
@@ -60,6 +64,9 @@ namespace MT_WordCheck
 			lblMean.Text = "";
 			lblMeanEx1.Text = "";
 			lblMeanEx2.Text = "";
+
+			// 出題Noを非表示にする
+			lblNo.Visible = false;
 		}
 		
 		// ボタン：英単語データを参照する
@@ -135,8 +142,6 @@ namespace MT_WordCheck
 				if (lblMean.Text == "")
 				{
 					ShowEnChkJp();
-
-					
 				}
 				// 訳が表示されていた場合は次の問題を表示する
 				else
@@ -149,6 +154,7 @@ namespace MT_WordCheck
 					}
 
 					now++;
+					notOmitNow++;
 
 					// 英単語データがMAXを超えたら
 					if (now >= cnt)
@@ -170,6 +176,7 @@ namespace MT_WordCheck
 						return;
 					}
 
+					UpdateLabel();
 					ShowEnChkEn();
 				}
 			}
@@ -194,6 +201,7 @@ namespace MT_WordCheck
 					}
 
 					now++;
+					notOmitNow++;
 
 					// 英単語データがMAXを超えたら
 					if (now >= cnt)
@@ -215,6 +223,7 @@ namespace MT_WordCheck
 						return;
 					}
 
+					UpdateLabel();
 					ShowJpChkJp();
 				}
 			}
@@ -316,14 +325,22 @@ namespace MT_WordCheck
 			}
 		}
 
-		// 関数：シャッフルして最初の問題を出題する
+		// 関数：最初の問題を出題する
 		private void StartCheck()
 		{
 			// 出題Noをリセット
 			now = 0;
+			notOmitNow = 0;
 
-			// シャッフルする
-			rdm = ary.OrderBy(i => Guid.NewGuid()).ToArray();
+			// シャッフルする設定ならシャッフルする
+			if (cbShuffle.Checked)
+			{
+				rdm = ary.OrderBy(i => Guid.NewGuid()).ToArray();
+			}
+			else
+			{
+				rdm = ary;
+			}
 
 			// 英単語データが読み込み済みかチェック
 			if (!loaded)
@@ -348,7 +365,17 @@ namespace MT_WordCheck
 				}
 				else
 				{
+					// 出題Noを表示する
+					lblNo.Visible = true;
+					DataRow[] dRows = dt.Select("省略en = '0'");
+					notOmitCnt = dRows.Count();
+					notOmitNow = 1;
+					UpdateLabel();
+
+					// ラジオボタンを無効化
 					RbDisabled();
+
+					// 出題開始
 					ShowEnChkEn();
 				}
 			}
@@ -368,7 +395,17 @@ namespace MT_WordCheck
 				}
 				else
 				{
+					// 出題Noを表示する
+					lblNo.Visible = true;
+					DataRow[] dRows = dt.Select("省略jp = '0'");
+					notOmitCnt = dRows.Count();
+					notOmitNow = 1;
+					UpdateLabel();
+
+					// ラジオボタンを無効化
 					RbDisabled();
+
+					// 出題開始
 					ShowJpChkJp();
 				}
 			}
@@ -416,6 +453,9 @@ namespace MT_WordCheck
 
 			// チェックボックスを元に戻す
 			cbOmit.Checked = false;
+
+			// 出題Noを非表示にする
+			lblNo.Visible = false;
 
 			SaveText();
 		}
@@ -552,6 +592,12 @@ namespace MT_WordCheck
 			{
 				MessageBox.Show("データの保存に失敗しました");
 			}
+		}
+		
+		// 関数：ラベルの更新
+		private void UpdateLabel()
+		{
+			lblNo.Text = notOmitNow.ToString() + " / " + notOmitCnt.ToString();
 		}
 
 		// フォーム終了時に保存

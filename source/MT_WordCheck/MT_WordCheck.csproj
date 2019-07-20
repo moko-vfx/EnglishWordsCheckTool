@@ -7,7 +7,7 @@
     <ProjectGuid>{F24AC148-EDD7-4AE4-8768-0C3207859351}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MT_WordCheck</RootNamespace>
-    <AssemblyName>MT_EnWordsCheck_v100</AssemblyName>
+    <AssemblyName>MT_EnWordsCheck_v101</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -41,7 +41,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>

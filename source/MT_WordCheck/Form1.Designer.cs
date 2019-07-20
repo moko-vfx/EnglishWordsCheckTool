@@ -36,7 +36,6 @@
 			this.btnRead = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.lblWord = new System.Windows.Forms.Label();
 			this.lblMean = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
@@ -45,15 +44,18 @@
 			this.cbOmit = new System.Windows.Forms.CheckBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.lblMeanEx2 = new System.Windows.Forms.Label();
-			this.lblWordEx2 = new System.Windows.Forms.Label();
 			this.lblMeanEx1 = new System.Windows.Forms.Label();
-			this.lblWordEx1 = new System.Windows.Forms.Label();
 			this.lblWordPoS = new System.Windows.Forms.Label();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.button1 = new System.Windows.Forms.Button();
 			this.rbChkEn = new System.Windows.Forms.RadioButton();
 			this.rbChkJp = new System.Windows.Forms.RadioButton();
 			this.btnClose = new System.Windows.Forms.Button();
+			this.lblNo = new System.Windows.Forms.Label();
+			this.cbShuffle = new System.Windows.Forms.CheckBox();
+			this.lblWordEx1 = new System.Windows.Forms.TextBox();
+			this.lblWordEx2 = new System.Windows.Forms.TextBox();
+			this.lblWord = new System.Windows.Forms.TextBox();
 			this.groupBox3.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -137,23 +139,13 @@
 			this.label4.TabIndex = 1;
 			this.label4.Text = "訳";
 			// 
-			// lblWord
-			// 
-			this.lblWord.AutoSize = true;
-			this.lblWord.Font = new System.Drawing.Font("メイリオ", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
-			this.lblWord.Location = new System.Drawing.Point(108, 26);
-			this.lblWord.Name = "lblWord";
-			this.lblWord.Size = new System.Drawing.Size(76, 41);
-			this.lblWord.TabIndex = 1;
-			this.lblWord.Text = "Test";
-			// 
 			// lblMean
 			// 
 			this.lblMean.AutoSize = true;
+			this.lblMean.BackColor = System.Drawing.Color.Transparent;
 			this.lblMean.Font = new System.Drawing.Font("メイリオ", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblMean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
-			this.lblMean.Location = new System.Drawing.Point(108, 120);
+			this.lblMean.Location = new System.Drawing.Point(94, 120);
 			this.lblMean.Name = "lblMean";
 			this.lblMean.Size = new System.Drawing.Size(72, 41);
 			this.lblMean.TabIndex = 1;
@@ -164,22 +156,22 @@
 			this.label7.AutoSize = true;
 			this.label7.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
-			this.label7.Location = new System.Drawing.Point(71, 29);
+			this.label7.Location = new System.Drawing.Point(72, 29);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(39, 36);
+			this.label7.Size = new System.Drawing.Size(25, 36);
 			this.label7.TabIndex = 1;
-			this.label7.Text = "：";
+			this.label7.Text = ":";
 			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
 			this.label8.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
-			this.label8.Location = new System.Drawing.Point(71, 123);
+			this.label8.Location = new System.Drawing.Point(72, 123);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(39, 36);
+			this.label8.Size = new System.Drawing.Size(25, 36);
 			this.label8.TabIndex = 1;
-			this.label8.Text = "：";
+			this.label8.Text = ":";
 			// 
 			// btnAnswer
 			// 
@@ -220,14 +212,15 @@
 			// 
 			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+			this.groupBox3.Controls.Add(this.lblWordEx2);
+			this.groupBox3.Controls.Add(this.lblWord);
+			this.groupBox3.Controls.Add(this.lblWordEx1);
 			this.groupBox3.Controls.Add(this.label3);
 			this.groupBox3.Controls.Add(this.label7);
 			this.groupBox3.Controls.Add(this.lblMeanEx2);
-			this.groupBox3.Controls.Add(this.lblWordEx2);
 			this.groupBox3.Controls.Add(this.lblMeanEx1);
-			this.groupBox3.Controls.Add(this.lblWordEx1);
 			this.groupBox3.Controls.Add(this.lblWordPoS);
-			this.groupBox3.Controls.Add(this.lblWord);
 			this.groupBox3.Controls.Add(this.label4);
 			this.groupBox3.Controls.Add(this.label8);
 			this.groupBox3.Controls.Add(this.lblMean);
@@ -252,18 +245,6 @@
 			this.lblMeanEx2.TabIndex = 1;
 			this.lblMeanEx2.Text = "アメリカの人工衛星は日本に気象に関するデータを提供した。";
 			// 
-			// lblWordEx2
-			// 
-			this.lblWordEx2.AutoSize = true;
-			this.lblWordEx2.BackColor = System.Drawing.Color.Transparent;
-			this.lblWordEx2.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblWordEx2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
-			this.lblWordEx2.Location = new System.Drawing.Point(23, 91);
-			this.lblWordEx2.Name = "lblWordEx2";
-			this.lblWordEx2.Size = new System.Drawing.Size(526, 24);
-			this.lblWordEx2.TabIndex = 1;
-			this.lblWordEx2.Text = "An American satellite provided Japan with data about the weather.";
-			// 
 			// lblMeanEx1
 			// 
 			this.lblMeanEx1.AutoSize = true;
@@ -276,22 +257,11 @@
 			this.lblMeanEx1.TabIndex = 1;
 			this.lblMeanEx1.Text = "彼らは自分の牛が生産したミルクに対してもっとお金を欲しいと思った。";
 			// 
-			// lblWordEx1
-			// 
-			this.lblWordEx1.AutoSize = true;
-			this.lblWordEx1.BackColor = System.Drawing.Color.Transparent;
-			this.lblWordEx1.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblWordEx1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
-			this.lblWordEx1.Location = new System.Drawing.Point(23, 65);
-			this.lblWordEx1.Name = "lblWordEx1";
-			this.lblWordEx1.Size = new System.Drawing.Size(478, 24);
-			this.lblWordEx1.TabIndex = 1;
-			this.lblWordEx1.Text = "They wanted more money for the milk their cows produced.";
-			// 
 			// lblWordPoS
 			// 
 			this.lblWordPoS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblWordPoS.AutoSize = true;
+			this.lblWordPoS.BackColor = System.Drawing.Color.Transparent;
 			this.lblWordPoS.Font = new System.Drawing.Font("メイリオ", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblWordPoS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(170)))), ((int)(((byte)(100)))));
 			this.lblWordPoS.Location = new System.Drawing.Point(517, 24);
@@ -330,6 +300,7 @@
 			this.rbChkEn.Name = "rbChkEn";
 			this.rbChkEn.Size = new System.Drawing.Size(131, 24);
 			this.rbChkEn.TabIndex = 1;
+			this.rbChkEn.TabStop = true;
 			this.rbChkEn.Text = "日本語訳チェック";
 			this.rbChkEn.UseVisualStyleBackColor = true;
 			this.rbChkEn.CheckedChanged += new System.EventHandler(this.RbChkEn_CheckedChanged);
@@ -359,16 +330,92 @@
 			this.btnClose.UseVisualStyleBackColor = true;
 			this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
 			// 
+			// lblNo
+			// 
+			this.lblNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblNo.BackColor = System.Drawing.Color.Transparent;
+			this.lblNo.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
+			this.lblNo.Location = new System.Drawing.Point(473, 132);
+			this.lblNo.Name = "lblNo";
+			this.lblNo.Size = new System.Drawing.Size(138, 24);
+			this.lblNo.TabIndex = 1;
+			this.lblNo.Text = "000 / 000";
+			this.lblNo.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+			// 
+			// cbShuffle
+			// 
+			this.cbShuffle.AutoSize = true;
+			this.cbShuffle.Checked = true;
+			this.cbShuffle.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.cbShuffle.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.cbShuffle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
+			this.cbShuffle.Location = new System.Drawing.Point(350, 115);
+			this.cbShuffle.Name = "cbShuffle";
+			this.cbShuffle.Size = new System.Drawing.Size(119, 24);
+			this.cbShuffle.TabIndex = 1;
+			this.cbShuffle.TabStop = false;
+			this.cbShuffle.Text = "シャッフルする";
+			this.cbShuffle.UseVisualStyleBackColor = true;
+			this.cbShuffle.CheckedChanged += new System.EventHandler(this.CbOmit_CheckedChanged);
+			// 
+			// lblWordEx1
+			// 
+			this.lblWordEx1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblWordEx1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.lblWordEx1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.lblWordEx1.Font = new System.Drawing.Font("メイリオ", 12F);
+			this.lblWordEx1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
+			this.lblWordEx1.Location = new System.Drawing.Point(28, 65);
+			this.lblWordEx1.Name = "lblWordEx1";
+			this.lblWordEx1.Size = new System.Drawing.Size(545, 24);
+			this.lblWordEx1.TabIndex = 2;
+			this.lblWordEx1.Text = "They wanted more money for the milk their cows produced.";
+			this.lblWordEx1.WordWrap = false;
+			// 
+			// lblWordEx2
+			// 
+			this.lblWordEx2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblWordEx2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.lblWordEx2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.lblWordEx2.Font = new System.Drawing.Font("メイリオ", 12F);
+			this.lblWordEx2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
+			this.lblWordEx2.Location = new System.Drawing.Point(27, 91);
+			this.lblWordEx2.Name = "lblWordEx2";
+			this.lblWordEx2.Size = new System.Drawing.Size(545, 24);
+			this.lblWordEx2.TabIndex = 2;
+			this.lblWordEx2.Text = "An American satellite provided Japan with data about the weather.";
+			this.lblWordEx2.WordWrap = false;
+			// 
+			// lblWord
+			// 
+			this.lblWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.lblWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.lblWord.Font = new System.Drawing.Font("メイリオ", 20.25F, System.Drawing.FontStyle.Bold);
+			this.lblWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
+			this.lblWord.Location = new System.Drawing.Point(101, 26);
+			this.lblWord.Name = "lblWord";
+			this.lblWord.Size = new System.Drawing.Size(348, 41);
+			this.lblWord.TabIndex = 2;
+			this.lblWord.Text = "Test";
+			this.lblWord.WordWrap = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
 			this.ClientSize = new System.Drawing.Size(634, 479);
+			this.Controls.Add(this.lblNo);
 			this.Controls.Add(this.rbChkJp);
 			this.Controls.Add(this.rbChkEn);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.groupBox3);
+			this.Controls.Add(this.cbShuffle);
 			this.Controls.Add(this.cbOmit);
 			this.Controls.Add(this.panelLabel);
 			this.Controls.Add(this.btnClose);
@@ -379,10 +426,10 @@
 			this.Controls.Add(this.tbPath);
 			this.Controls.Add(this.btnRef);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximumSize = new System.Drawing.Size(800, 518);
+			this.MaximumSize = new System.Drawing.Size(1000, 518);
 			this.MinimumSize = new System.Drawing.Size(580, 518);
 			this.Name = "Form1";
-			this.Text = "English Words Check Tool v1.00";
+			this.Text = "English Words Check Tool v1.01";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.groupBox3.ResumeLayout(false);
@@ -401,7 +448,6 @@
 		public System.Windows.Forms.Button btnRead;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label lblWord;
 		private System.Windows.Forms.Label lblMean;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
@@ -412,13 +458,16 @@
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.RadioButton rbChkEn;
-		private System.Windows.Forms.Label lblWordEx1;
 		private System.Windows.Forms.Label lblMeanEx2;
-		private System.Windows.Forms.Label lblWordEx2;
 		private System.Windows.Forms.Label lblMeanEx1;
 		private System.Windows.Forms.Label lblWordPoS;
 		private System.Windows.Forms.RadioButton rbChkJp;
 		public System.Windows.Forms.Button btnClose;
+		private System.Windows.Forms.Label lblNo;
+		private System.Windows.Forms.CheckBox cbShuffle;
+		private System.Windows.Forms.TextBox lblWordEx1;
+		private System.Windows.Forms.TextBox lblWordEx2;
+		private System.Windows.Forms.TextBox lblWord;
 	}
 }
 
