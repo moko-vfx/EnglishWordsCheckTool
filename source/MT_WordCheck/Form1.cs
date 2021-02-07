@@ -230,11 +230,19 @@ namespace MT_WordCheck
 		}
 
 		// ボタン：Google翻訳
-		private void Button1_Click(object sender, EventArgs e)
+		private void btn_GoogleT_Click(object sender, EventArgs e)
 		{
 			string baseUrl = @"https://translate.google.com/?hl=ja#view=home&op=translate&sl=en&tl=ja&text=";
 			string word = lblWord.Text;
 			System.Diagnostics.Process.Start(baseUrl + word);
+		}
+		// ボタン：Google画像検索
+		private void btn_GoogleI_Click(object sender, EventArgs e)
+		{
+			string baseUrl1 = @"https://www.google.co.jp/search?q=";
+			string baseUrl2 = @"&tbm=isch";
+			string word = lblWord.Text;
+			System.Diagnostics.Process.Start(baseUrl1 + word + baseUrl2);
 		}
 
 		// ボタン：チェック終了

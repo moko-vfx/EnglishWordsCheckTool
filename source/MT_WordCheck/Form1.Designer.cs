@@ -43,19 +43,20 @@
 			this.panelLabel = new System.Windows.Forms.Panel();
 			this.cbOmit = new System.Windows.Forms.CheckBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.lblWordEx2 = new System.Windows.Forms.TextBox();
+			this.lblWord = new System.Windows.Forms.TextBox();
+			this.lblWordEx1 = new System.Windows.Forms.TextBox();
 			this.lblMeanEx2 = new System.Windows.Forms.Label();
 			this.lblMeanEx1 = new System.Windows.Forms.Label();
 			this.lblWordPoS = new System.Windows.Forms.Label();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btn_GoogleT = new System.Windows.Forms.Button();
 			this.rbChkEn = new System.Windows.Forms.RadioButton();
 			this.rbChkJp = new System.Windows.Forms.RadioButton();
 			this.btnClose = new System.Windows.Forms.Button();
 			this.lblNo = new System.Windows.Forms.Label();
 			this.cbShuffle = new System.Windows.Forms.CheckBox();
-			this.lblWordEx1 = new System.Windows.Forms.TextBox();
-			this.lblWordEx2 = new System.Windows.Forms.TextBox();
-			this.lblWord = new System.Windows.Forms.TextBox();
+			this.btn_GoogleI = new System.Windows.Forms.Button();
 			this.groupBox3.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -233,6 +234,51 @@
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = " 問題 ";
 			// 
+			// lblWordEx2
+			// 
+			this.lblWordEx2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblWordEx2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.lblWordEx2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.lblWordEx2.Font = new System.Drawing.Font("メイリオ", 12F);
+			this.lblWordEx2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
+			this.lblWordEx2.Location = new System.Drawing.Point(27, 91);
+			this.lblWordEx2.Name = "lblWordEx2";
+			this.lblWordEx2.Size = new System.Drawing.Size(545, 24);
+			this.lblWordEx2.TabIndex = 2;
+			this.lblWordEx2.Text = "An American satellite provided Japan with data about the weather.";
+			this.lblWordEx2.WordWrap = false;
+			// 
+			// lblWord
+			// 
+			this.lblWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.lblWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.lblWord.Font = new System.Drawing.Font("メイリオ", 20.25F, System.Drawing.FontStyle.Bold);
+			this.lblWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
+			this.lblWord.Location = new System.Drawing.Point(101, 26);
+			this.lblWord.Name = "lblWord";
+			this.lblWord.Size = new System.Drawing.Size(348, 41);
+			this.lblWord.TabIndex = 2;
+			this.lblWord.Text = "Test";
+			this.lblWord.WordWrap = false;
+			// 
+			// lblWordEx1
+			// 
+			this.lblWordEx1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblWordEx1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
+			this.lblWordEx1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.lblWordEx1.Font = new System.Drawing.Font("メイリオ", 12F);
+			this.lblWordEx1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
+			this.lblWordEx1.Location = new System.Drawing.Point(28, 65);
+			this.lblWordEx1.Name = "lblWordEx1";
+			this.lblWordEx1.Size = new System.Drawing.Size(545, 24);
+			this.lblWordEx1.TabIndex = 2;
+			this.lblWordEx1.Text = "They wanted more money for the milk their cows produced.";
+			this.lblWordEx1.WordWrap = false;
+			// 
 			// lblMeanEx2
 			// 
 			this.lblMeanEx2.AutoSize = true;
@@ -275,20 +321,20 @@
 			this.openFileDialog1.FileName = "openFileDialog1";
 			this.openFileDialog1.Filter = "txt ファイル(*.txt)|*.txt|すべてのファイル(*.*)|*.*";
 			// 
-			// button1
+			// btn_GoogleT
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.BackColor = System.Drawing.Color.White;
-			this.button1.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.button1.ForeColor = System.Drawing.Color.RoyalBlue;
-			this.button1.Location = new System.Drawing.Point(509, 385);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(101, 27);
-			this.button1.TabIndex = 1;
-			this.button1.TabStop = false;
-			this.button1.Text = "Google 翻訳";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.Button1_Click);
+			this.btn_GoogleT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_GoogleT.BackColor = System.Drawing.Color.White;
+			this.btn_GoogleT.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btn_GoogleT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(140)))), ((int)(((byte)(200)))));
+			this.btn_GoogleT.Location = new System.Drawing.Point(455, 384);
+			this.btn_GoogleT.Name = "btn_GoogleT";
+			this.btn_GoogleT.Size = new System.Drawing.Size(73, 27);
+			this.btn_GoogleT.TabIndex = 1;
+			this.btn_GoogleT.TabStop = false;
+			this.btn_GoogleT.Text = "音声確認";
+			this.btn_GoogleT.UseVisualStyleBackColor = false;
+			this.btn_GoogleT.Click += new System.EventHandler(this.btn_GoogleT_Click);
 			// 
 			// rbChkEn
 			// 
@@ -321,7 +367,7 @@
 			// btnClose
 			// 
 			this.btnClose.Font = new System.Drawing.Font("メイリオ", 9.75F);
-			this.btnClose.Location = new System.Drawing.Point(285, 411);
+			this.btnClose.Location = new System.Drawing.Point(275, 411);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Size = new System.Drawing.Size(118, 50);
 			this.btnClose.TabIndex = 1;
@@ -359,50 +405,20 @@
 			this.cbShuffle.UseVisualStyleBackColor = true;
 			this.cbShuffle.CheckedChanged += new System.EventHandler(this.CbOmit_CheckedChanged);
 			// 
-			// lblWordEx1
+			// btn_GoogleI
 			// 
-			this.lblWordEx1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblWordEx1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
-			this.lblWordEx1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.lblWordEx1.Font = new System.Drawing.Font("メイリオ", 12F);
-			this.lblWordEx1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
-			this.lblWordEx1.Location = new System.Drawing.Point(28, 65);
-			this.lblWordEx1.Name = "lblWordEx1";
-			this.lblWordEx1.Size = new System.Drawing.Size(545, 24);
-			this.lblWordEx1.TabIndex = 2;
-			this.lblWordEx1.Text = "They wanted more money for the milk their cows produced.";
-			this.lblWordEx1.WordWrap = false;
-			// 
-			// lblWordEx2
-			// 
-			this.lblWordEx2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblWordEx2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
-			this.lblWordEx2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.lblWordEx2.Font = new System.Drawing.Font("メイリオ", 12F);
-			this.lblWordEx2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(165)))), ((int)(((byte)(140)))));
-			this.lblWordEx2.Location = new System.Drawing.Point(27, 91);
-			this.lblWordEx2.Name = "lblWordEx2";
-			this.lblWordEx2.Size = new System.Drawing.Size(545, 24);
-			this.lblWordEx2.TabIndex = 2;
-			this.lblWordEx2.Text = "An American satellite provided Japan with data about the weather.";
-			this.lblWordEx2.WordWrap = false;
-			// 
-			// lblWord
-			// 
-			this.lblWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
-			this.lblWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.lblWord.Font = new System.Drawing.Font("メイリオ", 20.25F, System.Drawing.FontStyle.Bold);
-			this.lblWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(185)))), ((int)(((byte)(180)))));
-			this.lblWord.Location = new System.Drawing.Point(101, 26);
-			this.lblWord.Name = "lblWord";
-			this.lblWord.Size = new System.Drawing.Size(348, 41);
-			this.lblWord.TabIndex = 2;
-			this.lblWord.Text = "Test";
-			this.lblWord.WordWrap = false;
+			this.btn_GoogleI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_GoogleI.BackColor = System.Drawing.Color.White;
+			this.btn_GoogleI.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btn_GoogleI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(140)))), ((int)(((byte)(10)))));
+			this.btn_GoogleI.Location = new System.Drawing.Point(537, 384);
+			this.btn_GoogleI.Name = "btn_GoogleI";
+			this.btn_GoogleI.Size = new System.Drawing.Size(73, 27);
+			this.btn_GoogleI.TabIndex = 16;
+			this.btn_GoogleI.TabStop = false;
+			this.btn_GoogleI.Text = "画像検索";
+			this.btn_GoogleI.UseVisualStyleBackColor = false;
+			this.btn_GoogleI.Click += new System.EventHandler(this.btn_GoogleI_Click);
 			// 
 			// Form1
 			// 
@@ -410,10 +426,11 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(39)))));
 			this.ClientSize = new System.Drawing.Size(634, 479);
+			this.Controls.Add(this.btn_GoogleI);
 			this.Controls.Add(this.lblNo);
 			this.Controls.Add(this.rbChkJp);
 			this.Controls.Add(this.rbChkEn);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btn_GoogleT);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.cbShuffle);
 			this.Controls.Add(this.cbOmit);
@@ -427,9 +444,9 @@
 			this.Controls.Add(this.btnRef);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximumSize = new System.Drawing.Size(1000, 518);
-			this.MinimumSize = new System.Drawing.Size(580, 518);
+			this.MinimumSize = new System.Drawing.Size(600, 518);
 			this.Name = "Form1";
-			this.Text = "English Words Check Tool v1.01";
+			this.Text = "English Words Check Tool v1.02";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.groupBox3.ResumeLayout(false);
@@ -456,7 +473,7 @@
 		private System.Windows.Forms.CheckBox cbOmit;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btn_GoogleT;
 		private System.Windows.Forms.RadioButton rbChkEn;
 		private System.Windows.Forms.Label lblMeanEx2;
 		private System.Windows.Forms.Label lblMeanEx1;
@@ -468,6 +485,7 @@
 		private System.Windows.Forms.TextBox lblWordEx1;
 		private System.Windows.Forms.TextBox lblWordEx2;
 		private System.Windows.Forms.TextBox lblWord;
+		private System.Windows.Forms.Button btn_GoogleI;
 	}
 }
 
